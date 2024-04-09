@@ -1,5 +1,5 @@
 # A Kernel Seedling
-TODO: intro
+An introduction to kernel modules in Linux. In this lab, I completed a C program that uses Linux's seq_file API to output the number of processes running, directly from the kernel. The module can be built from source using a Makefile routine, and then inserted into the kernel. The output of the program is generated when /proc/count is read by cat, which cat then outputs.
 
 ## Building
 ```shell
