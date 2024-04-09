@@ -3,25 +3,31 @@ TODO: intro
 
 ## Building
 ```shell
-TODO: cmd for build
+make
 ```
 
 ## Running
 ```shell
-TODO: cmd for running binary
+sudo insmod proc_count.ko // inserts the module into the kernel
+cat /proc/count // outputs the contents of the virtual file
 ```
-TODO: results?
+Simply prints the number of processes that are running.
 
 ## Cleaning Up
 ```shell
-TODO: cmd for cleaning the built binary
+make clean
 ```
+when building the binary again, you will have to remove the kernel from the module with:
+'''shell
+sudo rmmod proc_count.ko
+'''
+and then reinsert it.
 
 ## Testing
 ```python
 python -m unittest
 ```
-TODO: results?
+The unittest outputs that it ran 3 tests, and the time it took. Then it says OK.
 
 Report which kernel release version you tested your module on
 (hint: use `uname`, check for options with `man uname`).
