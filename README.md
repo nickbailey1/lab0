@@ -18,9 +18,9 @@ Simply prints the number of processes that are running.
 make clean
 ```
 when building the binary again, you will have to remove the kernel from the module with:
-'''shell
+```shell
 sudo rmmod proc_count.ko
-'''
+```
 and then reinsert it.
 
 ## Testing
@@ -36,4 +36,4 @@ It should match release numbers as seen on https://www.kernel.org/.
 ```shell
 uname -r -s -v
 ```
-TODO: kernel ver?
+Kernel release version: Linux 5.14.8-arch1-1 #1 SMP PREEMPT Sun, 26 Sep 2021 19:36:15 +0000
