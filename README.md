@@ -28,6 +28,13 @@ and then reinsert it.
 python -m unittest
 ```
 The unittest outputs that it ran 3 tests, and the time it took. Then it says OK.
+Occasionally, the first test fails, with an assertion error that indicates the process
+count was off by one (every failure has only  been off by one). To the best of my
+knowledge, my code handles process counting the way the assignment intends it to be
+handled, and this error is likely due to a race condition between when the kernel module reads the process count
+and when the python test reads the process count. This could be due to the python test
+or interpreter itself, or some other process starting or ending between the time that
+the test reads /proc/count and when it independently checks the process count. Alternatively, it could be a product of the environment I'm programming on, which is an M1 Macbook Pro (ARM architecture) emulating the x86 architeture in the VM.
 
 Report which kernel release version you tested your module on
 (hint: use `uname`, check for options with `man uname`).
