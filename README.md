@@ -34,7 +34,7 @@ knowledge, my code handles process counting the way the assignment intends it to
 handled, and this error is likely due to a race condition between when the kernel module reads the process count
 and when the python test reads the process count. This could be due to the python test
 or interpreter itself, or some other process starting or ending between the time that
-the test reads /proc/count and when it independently checks the process count. Alternatively, it could be a product of the environment I'm programming on, which is an M1 Macbook Pro (ARM architecture) emulating the x86 architeture in the VM.
+the test reads /proc/count and when it independently checks the process count. Alternatively, it could be a product of the environment I'm programming on, which is an M1 Macbook Pro (ARM architecture) emulating the x86 architeture in the VM. According to some quick research, the scheduler behavior can differ between native hardware and a virtualized environment, which could be another potential explanation.
 
 Report which kernel release version you tested your module on
 (hint: use `uname`, check for options with `man uname`).
